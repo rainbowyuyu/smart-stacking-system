@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能堆垛系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#722ED1',
+                        warning: '#FF7D00',
+                        danger: '#F53F3F',
+                        success: '#00B42A',
+                        info: '#86909C',
+                        light: '#F2F3F5',
+                        dark: '#1D2129'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-shadow {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            }
+            .hover-lift {
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+            .hover-lift:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #165DFF 0%, #722ED1 100%);
+            }
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                background-image: linear-gradient(135deg, #165DFF 0%, #722ED1 100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-dark min-h-screen flex flex-col">
+    <!-- 顶部导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="gradient-bg p-2 rounded-lg">
+                    <i class="fa fa-cubes text-white text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold text-dark">智能堆垛系统</h1>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="{{ url_for('dashboard') }}" class="text-primary font-medium">仪表盘</a>
+                <a href="{{ url_for('cargo') }}" class="text-gray-600 hover:text-primary transition-colors">货物管理</a>
+                <a href="#" class="text-gray-600 hover:text-primary transition-colors">堆场/仓库</a>
+                <a href="{{ url_for('optimization') }}" class="text-gray-600 hover:text-primary transition-colors">堆垛优化</a>
+                <a href="#" class="text-gray-600 hover:text-primary transition-colors">设备管理</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button class="bg-light p-2 rounded-full hover:bg-gray-200 transition-colors">
+                    <i class="fa fa-bell-o text-gray-600"></i>
+                </button>
+                <div class="flex items-center space-x-2">
+                    <img src="https://picsum.photos/id/1005/200/200" alt="用户头像" class="w-8 h-8 rounded-full object-cover">
+                    <span class="hidden md:inline text-sm font-medium">管理员</span>
+                </div>
+                <button class="md:hidden bg-light p-2 rounded-lg">
+                    <i class="fa fa-bars text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="flex-grow container mx-auto px-4 py-6">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

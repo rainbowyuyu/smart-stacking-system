@@ -24,9 +24,25 @@ app.register_blueprint(equipment_bp, url_prefix='/api/equipment')
 # 初始化LSTM模型
 lstm_model = build_lstm_model()
 
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('base.html')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/cargo')
+def cargo():
+    return render_template('cargo.html')
+
+@app.route('/optimization')
+def optimization():
+    return render_template('optimization.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)    
+    app.run(debug=True)
