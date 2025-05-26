@@ -64,18 +64,18 @@
     <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <div class="gradient-bg p-2 rounded-lg">
-                    <i class="fa fa-cubes text-white text-xl"></i>
-                </div>
-                <h1 class="text-xl font-bold text-dark">智能堆垛系统</h1>
+                <img src="{{ url_for('static', filename='xinghua_port.webp') }}" alt="Logo" class="w-16 h-16">
+                <h1 class="text-xl font-bold text-dark">常熟兴华港智能堆垛系统</h1>
             </div>
 
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="{{ url_for('dashboard') }}" class="text-primary font-medium">仪表盘</a>
                 <a href="{{ url_for('cargo') }}" class="text-gray-600 hover:text-primary transition-colors">货物管理</a>
-                <a href="#" class="text-gray-600 hover:text-primary transition-colors">堆场/仓库</a>
+                <a href="{{ url_for('yard') }}" class="text-gray-600 hover:text-primary transition-colors">堆场管理</a>
+                <a href="{{ url_for('warehouse') }}" class="text-gray-600 hover:text-primary transition-colors">仓库管理</a>
+                <a href="{{ url_for('equipment') }}" class="text-gray-600 hover:text-primary transition-colors">设备监控</a>
                 <a href="{{ url_for('optimization') }}" class="text-gray-600 hover:text-primary transition-colors">堆垛优化</a>
-                <a href="#" class="text-gray-600 hover:text-primary transition-colors">设备管理</a>
+
             </nav>
 
             <div class="flex items-center space-x-4">

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="equipment" class="mb-10">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold">设备管理</h2>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input type="text" placeholder="搜索设备..." class="pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+                <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            </div>
+            <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
+                <i class="fa fa-plus mr-1"></i> 添加设备
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl card-shadow overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-gray-50 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left">设备ID</th>
+                        <th class="px-6 py-3 text-left">类型</th>
+                        <th class="px-6 py-3 text-left">承载能力 (吨)</th>
+                        <th class="px-6 py-3 text-left">最大高度 (m)</th>
+                        <th class="px-6 py-3 text-left">动力类型</th>
+                        <th class="px-6 py-3 text-left">防腐蚀</th>
+                        <th class="px-6 py-3 text-left">状态</th>
+                        <th class="px-6 py-3 text-left">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 text-sm">
+                    {% set equipment_list = [
+                        {'id': 'F001', 'type': '叉车', 'load': 3.5, 'height': 4.5, 'power': '电动', 'corrosion': '是', 'status': '运行'},
+                        {'id': 'F002', 'type': '叉车', 'load': 2.0, 'height': 4.0, 'power': '柴油', 'corrosion': '否', 'status': '闲置'},
+                        {'id': 'C001', 'type': '吊机', 'load': 10.0, 'height': 20.0, 'power': '柴油', 'corrosion': '是', 'status': '维护'},
+                        {'id': 'C002', 'type': '吊机', 'load': 8.0, 'height': 18.0, 'power': '电动', 'corrosion': '否', 'status': '运行'},
+                        {'id': 'S001', 'type': '输送机', 'load': 1.0, 'height': 1.5, 'power': '电动', 'corrosion': '是', 'status': '闲置'},
+                        {'id': 'S002', 'type': '输送机', 'load': 1.2, 'height': 1.8, 'power': '电动', 'corrosion': '否', 'status': '运行'},
+                        {'id': 'L001', 'type': '升降平台', 'load': 5.0, 'height': 6.0, 'power': '电动', 'corrosion': '是', 'status': '维护'},
+                        {'id': 'L002', 'type': '升降平台', 'load': 4.0, 'height': 5.5, 'power': '柴油', 'corrosion': '否', 'status': '运行'},
+                        {'id': 'P001', 'type': '堆高机', 'load': 2.5, 'height': 4.0, 'power': '电动', 'corrosion': '是', 'status': '闲置'},
+                        {'id': 'P002', 'type': '堆高机', 'load': 3.0, 'height': 4.5, 'power': '柴油', 'corrosion': '否', 'status': '运行'}
+                    ] %}
+
+                    {% for e in equipment_list %}
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-6 py-4 font-medium text-gray-900">{{ e.id }}</td>
+                        <td class="px-6 py-4 text-gray-500">{{ e.type }}</td>
+                        <td class="px-6 py-4 text-gray-500">{{ e.load }}</td>
+                        <td class="px-6 py-4 text-gray-500">{{ e.height }}</td>
+                        <td class="px-6 py-4 text-gray-500">{{ e.power }}</td>
+                        <td class="px-6 py-4 text-gray-500">{{ e.corrosion }}</td>
+                        <td class="px-6 py-4 text-gray-500">{{ e.status }}</td>
+                        <td class="px-6 py-4 text-gray-500">
+                            <div class="flex space-x-2">
+                                <button class="text-blue-500 hover:text-blue-700"><i class="fa fa-edit"></i></button>
+                                <button class="text-red-500 hover:text-red-700"><i class="fa fa-trash-o"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 分页区域 -->
+        <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+            <div>
+                <p class="text-sm text-gray-700">
+                    显示 <span class="font-medium">1</span> 到 <span class="font-medium">10</span> 条，共 <span class="font-medium">50</span> 条结果
+                </p>
+            </div>
+            <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <span class="sr-only">上一页</span>
+                    <i class="fa fa-chevron-left text-xs"></i>
+                </a>
+                <a href="#" aria-current="page" class="z-10 bg-primary text-white relative inline-flex items-center px-4 py-2 border border-primary text-sm font-medium">
+                    1
+                </a>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    2
+                </a>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    3
+                </a>
+                <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+                    ...
+                </span>
+                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    5
+                </a>
+                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <span class="sr-only">下一页</span>
+                    <i class="fa fa-chevron-right text-xs"></i>
+                </a>
+            </nav>
+        </div>
+    </div>
+</section>
+{% endblock %}

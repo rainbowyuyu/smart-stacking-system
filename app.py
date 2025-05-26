@@ -30,7 +30,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('base.html')
+    return render_template('login.html')
 
 @app.route('/dashboard')
 def dashboard():
@@ -39,6 +39,18 @@ def dashboard():
 @app.route('/cargo')
 def cargo():
     return render_template('cargo.html')
+
+@app.route('/equipment')
+def equipment():
+    return render_template('equipment.html')
+
+@app.route('/warehouse')
+def warehouse():
+    return render_template('warehouse.html')
+
+@app.route('/yard')
+def yard():
+    return render_template('yard.html')
 
 @app.route('/optimization')
 def optimization():

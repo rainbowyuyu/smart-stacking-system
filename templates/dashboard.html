@@ -6,7 +6,7 @@
         <div class="bg-gradient-to-r from-primary to-accent rounded-2xl p-6 md:p-8 text-white shadow-lg">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div class="mb-6 md:mb-0">
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-2">欢迎使用智能堆垛系统</h2>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-2">欢迎使用兴华港件杂货智能堆垛系统</h2>
                     <p class="text-blue-100 text-lg max-w-2xl">利用先进的算法优化您的仓储空间，提高货物周转效率，降低物流成本。</p>
                 </div>
                 <div class="flex space-x-4">
@@ -23,136 +23,253 @@
 
     <!-- 数据概览 -->
     <section id="dashboard" class="mb-10">
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold">系统概览</h2>
-            <div class="flex space-x-2">
-                <button class="text-sm bg-light px-3 py-1 rounded-md hover:bg-gray-200 transition-colors">
-                    <i class="fa fa-calendar-o mr-1"></i>今日
-                </button>
-                <button class="text-sm bg-light px-3 py-1 rounded-md hover:bg-gray-200 transition-colors">
-                    <i class="fa fa-calendar-o mr-1"></i>本周
-                </button>
-                <button class="text-sm bg-primary text-white px-3 py-1 rounded-md">
-                    <i class="fa fa-calendar-o mr-1"></i>本月
-                </button>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- 卡片1：总货物数量 -->
-            <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <p class="text-gray-500 text-sm">总货物数量</p>
-                        <h3 class="text-3xl font-bold mt-1">158</h3>
-                    </div>
-                    <div class="bg-blue-100 p-3 rounded-lg">
-                        <i class="fa fa-cube text-primary text-xl"></i>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-success text-sm font-medium flex items-center">
-                        <i class="fa fa-arrow-up mr-1"></i>8.2%
-                    </span>
-                    <span class="text-gray-500 text-sm ml-2">较上月</span>
-                </div>
-            </div>
-
-            <!-- 卡片2：空间利用率 -->
-            <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <p class="text-gray-500 text-sm">空间利用率</p>
-                        <h3 class="text-3xl font-bold mt-1">72.4%</h3>
-                    </div>
-                    <div class="bg-green-100 p-3 rounded-lg">
-                        <i class="fa fa-cubes text-success text-xl"></i>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-success text-sm font-medium flex items-center">
-                        <i class="fa fa-arrow-up mr-1"></i>4.5%
-                    </span>
-                    <span class="text-gray-500 text-sm ml-2">较上月</span>
-                </div>
-            </div>
-
-            <!-- 卡片3：出库效率 -->
-            <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <p class="text-gray-500 text-sm">出库效率</p>
-                        <h3 class="text-3xl font-bold mt-1">85.7%</h3>
-                    </div>
-                    <div class="bg-purple-100 p-3 rounded-lg">
-                        <i class="fa fa-truck text-accent text-xl"></i>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-danger text-sm font-medium flex items-center">
-                        <i class="fa fa-arrow-down mr-1"></i>2.1%
-                    </span>
-                    <span class="text-gray-500 text-sm ml-2">较上月</span>
-                </div>
-            </div>
-
-            <!-- 卡片4：设备可用性 -->
-            <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <p class="text-gray-500 text-sm">设备可用性</p>
-                        <h3 class="text-3xl font-bold mt-1">92.3%</h3>
-                    </div>
-                    <div class="bg-orange-100 p-3 rounded-lg">
-                        <i class="fa fa-wrench text-warning text-xl"></i>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-success text-sm font-medium flex items-center">
-                        <i class="fa fa-arrow-up mr-1"></i>3.8%
-                    </span>
-                    <span class="text-gray-500 text-sm ml-2">较上月</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 图表区域 -->
-    <section class="mb-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- 图表1：货物类型分布 -->
-        <div class="bg-white rounded-xl p-6 card-shadow">
             <div class="flex justify-between items-center mb-6">
-                <h3 class="font-bold text-lg">货物类型分布</h3>
+                <h2 class="text-2xl font-bold">系统概览</h2>
                 <div class="flex space-x-2">
-                    <button class="text-xs bg-light px-2 py-1 rounded-md hover:bg-gray-200 transition-colors">
-                        按数量
+                    <button class="text-sm bg-light px-3 py-1 rounded-md hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-calendar-o mr-1"></i>今日
                     </button>
-                    <button class="text-xs bg-primary text-white px-2 py-1 rounded-md">
-                        按体积
+                    <button class="text-sm bg-light px-3 py-1 rounded-md hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-calendar-o mr-1"></i>本周
+                    </button>
+                    <button class="text-sm bg-light px-3 py-1 rounded-md hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-calendar-o mr-1"></i>月度
+                    </button>
+                    <button class="text-sm bg-primary text-white px-3 py-1 rounded-md">
+                        <i class="fa fa-calendar-o mr-1"></i>年度
                     </button>
                 </div>
             </div>
-            <div class="h-80">
-                <canvas id="cargoTypeChart"></canvas>
-            </div>
-        </div>
 
-        <!-- 图表2：月度出库量 -->
-        <div class="bg-white rounded-xl p-6 card-shadow">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="font-bold text-lg">月度出库量趋势</h3>
-                <div class="flex space-x-2">
-                    <button class="text-xs bg-primary text-white px-2 py-1 rounded-md">
-                        今年
-                    </button>
-                    <button class="text-xs bg-light px-2 py-1 rounded-md hover:bg-gray-200 transition-colors">
-                        去年
-                    </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 卡片1：总货物数量 -->
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-500 text-sm">总货物数量</p>
+                            <h3 class="text-3xl font-bold mt-1">158</h3>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-lg">
+                            <i class="fa fa-cube text-primary text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-success text-sm font-medium flex items-center">
+                            <i class="fa fa-arrow-up mr-1"></i>8.2%
+                        </span>
+                        <span class="text-gray-500 text-sm ml-2">较上月</span>
+                    </div>
+                </div>
+
+                <!-- 卡片2：空间利用率 -->
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-500 text-sm">空间利用率</p>
+                            <h3 class="text-3xl font-bold mt-1">72.4%</h3>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-lg">
+                            <i class="fa fa-cubes text-success text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-success text-sm font-medium flex items-center">
+                            <i class="fa fa-arrow-up mr-1"></i>4.5%
+                        </span>
+                        <span class="text-gray-500 text-sm ml-2">较上月</span>
+                    </div>
+                </div>
+
+                <!-- 卡片3：出库效率 -->
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-500 text-sm">出库效率</p>
+                            <h3 class="text-3xl font-bold mt-1">85.7%</h3>
+                        </div>
+                        <div class="bg-purple-100 p-3 rounded-lg">
+                            <i class="fa fa-truck text-accent text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-danger text-sm font-medium flex items-center">
+                            <i class="fa fa-arrow-down mr-1"></i>2.1%
+                        </span>
+                        <span class="text-gray-500 text-sm ml-2">较上月</span>
+                    </div>
+                </div>
+
+                <!-- 卡片4：设备可用性 -->
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-500 text-sm">设备可用性</p>
+                            <h3 class="text-3xl font-bold mt-1">92.3%</h3>
+                        </div>
+                        <div class="bg-orange-100 p-3 rounded-lg">
+                            <i class="fa fa-wrench text-warning text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-success text-sm font-medium flex items-center">
+                            <i class="fa fa-arrow-up mr-1"></i>3.8%
+                        </span>
+                        <span class="text-gray-500 text-sm ml-2">较上月</span>
+                    </div>
                 </div>
             </div>
-            <div class="h-80">
-                <canvas id="outgoingTrendChart"></canvas>
+        </section>
+
+        <!-- 图表区域 -->
+        <section class="mb-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- 图表1：货物类型分布 -->
+            <div class="bg-white rounded-xl p-6 card-shadow">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-bold text-lg">货物类型分布</h3>
+                    <div class="flex space-x-2">
+                        <button class="text-xs bg-primary text-white px-2 py-1 rounded-md">
+                            按数量
+                        </button>
+                        <button class="text-xs bg-light px-2 py-1 rounded-md hover:bg-gray-200 transition-colors">
+                            按体积
+                        </button>
+                    </div>
+                </div>
+                <div class="h-[500px] flex justify-center items-center">
+                    <canvas id="cargoTypeChart" width="400" height="400"></canvas>
+                </div>
             </div>
-        </div>
-    </section>
+
+            <script>
+                const ctx = document.getElementById('cargoTypeChart').getContext('2d');
+
+                const cargoData = {
+                    labels: ['纸浆', '纸卷', '钢材', '原木', '工程设备', '风电设备'],
+                    datasets: [{
+                        label: '货物类型分布',
+                        data: [12, 19, 10, 8, 6, 15], // 初始数据（你可以换成真实数据）
+                        backgroundColor: [
+                            '#d47b5f', // 纸浆（柔和绿）
+                            '#d1ba99', // 纸卷（浅灰）
+                            '#89cf87', // 钢材（深绿）
+                            '#A98467', // 原木（咖啡棕）
+                            '#eac6cc', // 工程设备（紫粉）
+                            '#af9ed8'  // 风电设备（灰紫）
+                        ],
+                        hoverOffset: 10
+                    }]
+                };
+
+                const cargoChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: cargoData,
+                    options: {
+                        responsive: true,
+                        layout: {
+                            padding: 20
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'right', // 图例放右边
+                                labels: {
+                                    boxWidth: 20,
+                                    padding: 15,
+                                     font: {
+                                        size: 16, // 放大图例文字
+                                        weight: 'bold' // 可选：加粗
+                                       }
+                                }
+                            },
+                            tooltip: {
+                                enabled: true,
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.label || '';
+                                        const value = context.raw || 0;
+                                        return `${label}: ${value}`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // 模拟动态更新：每2秒随机更新数据
+                setInterval(() => {
+                    cargoChart.data.datasets[0].data = cargoChart.data.datasets[0].data.map(() => Math.floor(Math.random() * 20) + 5);
+                    cargoChart.update();
+                }, 2000);
+            </script>
+
+
+
+            <!-- 图表2：月度出库量趋势 -->
+            <div class="bg-white rounded-xl p-6 card-shadow">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-bold text-lg">月度出库量趋势</h3>
+                    <div class="flex space-x-2">
+                        <button class="text-xs bg-primary text-white px-2 py-1 rounded-md" onclick="switchCargo('纸浆')">纸浆</button>
+                        <button class="text-xs bg-light px-2 py-1 rounded-md hover:bg-gray-200 transition-colors" onclick="switchCargo('纸卷')">纸卷</button>
+                        <button class="text-xs bg-light px-2 py-1 rounded-md hover:bg-gray-200 transition-colors" onclick="switchCargo('钢材')">钢材</button>
+                        <button class="text-xs bg-light px-2 py-1 rounded-md hover:bg-gray-200 transition-colors" onclick="switchCargo('原木')">原木</button>
+                        <button class="text-xs bg-light px-2 py-1 rounded-md hover:bg-gray-200 transition-colors" onclick="switchCargo('工程设备')">工程设备</button>
+                        <button class="text-xs bg-light px-2 py-1 rounded-md hover:bg-gray-200 transition-colors" onclick="switchCargo('风电设备')">风电设备</button>
+                    </div>
+                </div>
+                <div class="h-[400px] flex justify-center items-center">
+                    <canvas id="outgoingTrendChart" width="600" height="400"></canvas>
+                </div>
+            </div>
+
+            <script>
+                const monthlyLabels = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+
+                const cargoDatasets = {
+                    '纸浆': [120, 190, 140, 170, 200, 250, 220, 190, 240, 280, 300, 350],
+                    '纸卷': [80, 140, 120, 105, 180, 210, 190, 170, 200, 230, 250, 270],
+                    '钢材': [200, 250, 220, 240, 270, 300, 280, 260, 290, 320, 350, 380],
+                    '原木': [100, 120, 110, 130, 150, 170, 160, 140, 180, 200, 220, 240],
+                    '工程设备': [5, 8, 6, 9, 12, 14, 13, 11, 15, 17, 18, 20],
+                    '风电设备': [7, 10, 8, 11, 14, 16, 15, 13, 17, 19, 21, 23]
+                };
+
+                const trendCtx = document.getElementById('outgoingTrendChart').getContext('2d');
+
+                const trendChart = new Chart(trendCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: monthlyLabels,
+                        datasets: [{
+                            label: '纸浆 出库量',
+                            data: cargoDatasets['纸浆'],
+                            backgroundColor: '#2ac8be'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                labels: {
+                                    font: {
+                                        size: 16
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                function switchCargo(cargoType) {
+                    trendChart.data.datasets[0].label = `${cargoType} 出库量`;
+                    trendChart.data.datasets[0].data = cargoDatasets[cargoType];
+                    trendChart.update();
+                }
+            </script>
+        </section>
 {% endblock %}

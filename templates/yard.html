@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- 堆场管理区域 -->
+    <section id="yard" class="mb-10">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">堆场管理</h2>
+            <div class="flex space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="搜索堆场..." class="pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all">
+                    <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
+                    <i class="fa fa-plus mr-1"></i>添加堆场
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl card-shadow overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">堆场ID</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">父区域ID</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">子区域类型</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">面积(m²)</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">承重(吨/m²)</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">最大堆高(m)</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">地面类型</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">出库通道距离(m)</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">安全区域</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">防风雨措施</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">环境条件</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">坐标</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">A1</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">A区</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">高周转</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">500.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">10.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">5.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">水泥</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">30.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">危险品隔离区</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">遮盖</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">湿度低</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">123,456</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <div class="flex space-x-2">
+                                    <button class="text-blue-500 hover:text-blue-700">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-500 hover:text-red-700">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">B1</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">B区</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">危险品</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">300.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">4.50</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">5.50</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">沥青</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">30.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">危险品隔离区</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">排水</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">盐雾</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">200,150</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <div class="flex space-x-2">
+                                    <button class="text-blue-500 hover:text-blue-700">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-500 hover:text-red-700">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">C1</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">C区</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">普通</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">800.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">6.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">7.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">水泥</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">15.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">无</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">遮盖</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">湿度低</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">230,150</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <div class="flex space-x-2">
+                                    <button class="text-blue-500 hover:text-blue-700">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-500 hover:text-red-700">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">D1</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">D区</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">普通</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">750.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">5.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">8.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">沥青</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">15.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">无</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">遮盖</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">湿度低</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">150,110</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <div class="flex space-x-2">
+                                    <button class="text-blue-500 hover:text-blue-700">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-500 hover:text-red-700">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">E1</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">E区</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">普通</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">800.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">6.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">7.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">水泥</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">15.00</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">无</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">遮盖</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">湿度低</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">100,320</td>
+                            <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <div class="flex space-x-2">
+                                    <button class="text-blue-500 hover:text-blue-700">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-500 hover:text-red-700">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- 可以复制更多行 -->
+                    </tbody>
+                </table>
+            </div>
+             <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                    <div class="flex-1 flex justify-between sm:hidden">
+                        <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                            上一页
+                        </a>
+                        <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                            下一页
+                        </a>
+                    </div>
+                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                        <div>
+                            <p class="text-sm text-gray-700">
+                                显示 <span class="font-medium">1</span> 到 <span class="font-medium">5</span> 条，共 <span class="font-medium">25</span> 条结果
+                            </p>
+                        </div>
+                        <div>
+                            <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                    <span class="sr-only">上一页</span>
+                                    <i class="fa fa-chevron-left text-xs"></i>
+                                </a>
+                                <a href="#" aria-current="page" class="z-10 bg-primary text-white relative inline-flex items-center px-4 py-2 border border-primary text-sm font-medium">
+                                    1
+                                </a>
+                                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                    2
+                                </a>
+                                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                    3
+                                </a>
+                                <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+                                    ...
+                                </span>
+                                <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                    5
+                                </a>
+                                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                    <span class="sr-only">下一页</span>
+                                    <i class="fa fa-chevron-right text-xs"></i>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+{% endblock %}
